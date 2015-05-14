@@ -20,3 +20,6 @@
 
 # ignore keys!
 *.pem
+
+# RubyMine
+/.idea
