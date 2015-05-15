@@ -1,25 +1,42 @@
-<div class="container">
-  <h1>Call to Action</h1>
-  <h2>Don't just read the news.</h2>
 
+<nav class="clearfix sitenav">
+  <div class="col-md-8">
+    <h1 class="brand"><%= link_to "Call to Action", root_path %> <small>don't just read the news. engage.</small></h1>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="cta-actions">
+      <%= render 'ctas/actions' %>
+    </div>
+  </div>
+</nav>
+
+
+<div class="col-xs-12">
   <p>Modern news is a media business. We read it, then forget it. The news cycle spins on.</p>
 
-  <p><b>Call to Action</b> places buttons at the end of news articles with options
-    of things you can do about what you've read. It makes it easy to do more if you want.</p>
+  <p><b>Call to Action</b> adds buttons to the end of news stories with suggestions
+    of things you can do if the article has affected you in some way - perhaps
+    you've been touched by a story, or angered.
+  </p>
 
 
   <h3>Give me things to do!</h3>
   <p><b>Call to Action</b> is a Chrome extension. You can get it here</p>
 
   <div id="fl-cta-container">
-    <a href="https://chrome.google.com/webstore/detail/call-to-action/bjppfcohnobmiopgompfghjdljgojnck" class="cta-button cta-help-button">Call to Action Chrome extension</a>
+    <a href="https://chrome.google.com/webstore/detail/call-to-action/bjppfcohnobmiopgompfghjdljgojnck" class="cta-button cta-help-button">Install Call to Action for Chrome</a>
   </div>
 
 
 
   <h3>Who decides on the actions?</h3>
   <p>Currently the list is curated from submissions. If you feel that balance is missing,
-    or you want to raise awareness of an action, please get in contact: kevin@skinofstars.com</p>
+    or you want to raise awareness of an action:
+
+    <%= link_to "Suggest an Action", new_cta_path, class: "btn btn-default" %>
+
+  </p>
 
 
   <h3>How does it work?</h3>
@@ -57,12 +74,13 @@
   <p>What I wanted was an option or encouragement for something to do about what
     I was reading. I wanted buttons at the end, recommending things I could do.</p>
 
+  <br />
+  <br />
+  <!-- all because i couldn't be bothered to do add a little margin-botttom css.
+        i mean, i could even be doing the css now rather than writing this,
+        but i'm not... screw you css! -->
+  <br />
+  <br />
+
 </div>
 
-<br />
-<br />
-<!-- all because i couldn't be bothered to do add a little margine botttom css.
-      i mean, i could even be doing the css now rather than writing this,
-      but i'm not... screw you css! -->
-<br />
-<br />

@@ -1,12 +1,10 @@
 
-<br />
+  <a href="/" class="btn btn-default hidden-xs">Home</a>
 
 <% if policy(Cta).index? %>
-  <%= link_to "List CTAs", ctas_path, class: "btn btn-primary" %>
+  <%= link_to "See Actions", ctas_path, class: "btn btn-default" %>
 <% end %>
 
-<% if policy(Cta).index? %>
-  <%= link_to "New CTA", new_cta_path, class: "btn btn-success" %>
+<% if policy(Cta).new? %>
+  <%= link_to "Suggest an Action", new_cta_path, class: "btn btn-default" %>
 <% end %>
-
-<br />

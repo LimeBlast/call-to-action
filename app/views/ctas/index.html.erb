@@ -1,34 +1,29 @@
-<div class="container">
-  <%= render 'actions' %>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>URL</th>
-        <th>Always</th>
-        <th>Keywords</th>
-        <th>Published?</th>
-        <th colspan="2"></th>
+<nav class="clearfix sitenav">
+  <div class="col-sm-8">
+    <h1 class="brand"><%= link_to "Call to Action", root_path %> <small>the actions list</small></h1>
+  </div>
 
-      </tr>
-    </thead>
+  <div class="col-sm-4">
+    <div class="cta-actions">
+      <%= render 'actions' %>
+    </div>
+  </div>
+</nav>
 
-    <tbody>
-      <% @ctas.each do |cta| %>
-        <tr>
-          <td><%= cta.title %></td>
-          <td><%= cta.url %></td>
-          <td><%= cta.always %></td>
-          <td><%= cta.keywords %></td>
-          <td><%= cta.published %></td>
+<div class="col-xs-12">
+  <p>This is the list of live <strong>Calls to Action</strong> and the keywords they will match in an article. </p>
 
-
-          <td><%= link_to 'Edit', edit_cta_path(cta), class: "btn btn-success btn-sm" %></td>
-          <td><%= link_to 'Destroy', cta, method: :delete, data: { confirm: "Really destroy? It sounds pretty dramatic."}, class: "btn btn-danger btn-sm" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
+  <p>If you'd like to see another actions, then please
+    <%= link_to "Suggest an Action", new_cta_path, class: "btn btn-default" %>
+  </p>
 </div>
+
+<div class="col-xs-12">
+  <div class="list-group">
+    <% @ctas.each do |cta| %>
+      <%= render 'cta', cta: cta %>
+    <% end %>
+  </div>
+</div>
+
